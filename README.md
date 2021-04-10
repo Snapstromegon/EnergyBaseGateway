@@ -13,7 +13,7 @@ This small script privides an easier to use interface for that API via a webserv
 
 ### Get Sourcecode
 
-(All lines starting with ```$``` are bash commands)
+(All lines starting with `$` are bash commands)
 
 ```sh
 $ git clone git@github.com:Snapstromegon/EnergyBaseGateway.git
@@ -28,7 +28,7 @@ $ npm install
 
 ## Configureing the Gateway
 
-- Copy __config_template.js__ to __config.js__ and fill in your EnergyBase URL and password.
+- Copy **config_template.js** to **config.js** and fill in your EnergyBase URL and password.
 - Optionally change the port of the webserver (default is 8888)
 
 ## Launching the Server
@@ -36,6 +36,30 @@ $ npm install
 ```sh
 $ npm start
 ```
+
+## Using the Gateway
+
+### Example Reponse
+
+```json
+{
+  "currentUsage": 3712,
+  "networkToHouse": 3007,
+  "houseToNetwork": 0,
+  "solar": 705,
+  "ownConsumePercentage": 100
+}
+```
+
+### Fields explained
+
+| Field                |   Value    | Description                                |
+| :------------------- | :--------: | :----------------------------------------- |
+| currentUsage         | int (Watt) | Watts your home is currently using         |
+| networkToHouse       | int (Watt) | Watts provided by the energy grid          |
+| houseToNetwork       | int (Watt) | Watts your home provides to the grid       |
+| solar                | int (Watt) | Watts your solar system outputs            |
+| ownConsumePercentage | int (Watt) | Percentage of selfuse of your solar output |
 
 ## ⚠ Warning
 
