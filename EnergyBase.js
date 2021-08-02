@@ -30,8 +30,9 @@ export default class EnergyBase {
   }
 
   async login() {
-    console.log('Logging In');
-    const resp = await fetch(`${this.#url}/rs/login?login`, {
+    const url = `${this.#url}/rs/login?login`;
+    console.log(`Logging Into ${url}`);
+    const resp = await fetch(url, {
       method: 'post',
       body: JSON.stringify([this.#password]),
     });
